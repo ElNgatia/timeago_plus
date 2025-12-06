@@ -8,7 +8,7 @@ class TimerRefresh extends TimerRefreshWidget {
     this.child,
     required this.builder,
     Duration? refreshRate,
-  })  : super(key: key, refreshRate: refreshRate);
+  }) : super(key: key, refreshRate: refreshRate);
 
   /// Optional `child`
   final Widget? child;
