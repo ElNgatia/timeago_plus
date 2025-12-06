@@ -2,6 +2,14 @@
 
 All notable changes to **timeago_plus** will be documented in this file.
 
+## [1.2.0] - 2025-12-06
+### Added
+- Added Swahili locale support (`sw_messages.dart`)
+
+## [1.1.0] - 2025-12-06
+### Added
+- Added Somali locale support (`so_messages.dart`)
+
 ## [1.0.0] - 2025-12-06
 ### Initial release
 - First release of `timeago_plus` as a maintained fork of `timeago`
