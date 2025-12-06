@@ -13,5 +13,5 @@ jobs:
       - uses: subosito/flutter-action@v1
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
-          workingDir: packages/timeago_flutter_example
-          baseHref: /timeago.dart/
+          workingDir: packages/timeago_plus_flutter_example
+          baseHref: /timeago_plus/

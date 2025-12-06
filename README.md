@@ -1,52 +1,61 @@
-# timeago
+# timeago_plus
 
-`timeago` is a dart library that converts a date into a humanized text. Instead of showing a date  `2020-12-12 18:30`  with `timeago` you can display something like `"now", "an hour ago", "~1y", etc`
+`timeago_plus` is a Dart library that converts a `DateTime` into a human-friendly string.  
+Instead of showing a date like `2020-12-12 18:30`, you can display text such as:
 
-| timeago         | [![pub package](https://img.shields.io/pub/v/timeago.svg?label=timeago&color=blue)](https://pub.dartlang.org/packages/timeago)                         | core library    |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| timeago_flutter | [![pub package](https://img.shields.io/pub/v/timeago_flutter.svg?label=timeago_flutter&color=blue)](https://pub.dartlang.org/packages/timeago_flutter) | flutter widgets |
+- "now"
+- "15 minutes ago"
+- "an hour ago"
+- "~1y"
+- "in 3 days"
+
+This package is a maintained fork of the original `timeago` package by **Andres Araujo**.  
+It keeps the original MIT license and remains fully open-source.
 
 ---
 
+| Package               | Pub                                                                                                                            | Description       |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| **timeago_plus**     | [![pub package](https://img.shields.io/pub/v/timeago_plus.svg?label=timeago_plus&color=blue)](https://pub.dev/packages/timeago_plus) | Core library      |
+| **timeago_plus_flutter** | [![pub package](https://img.shields.io/pub/v/timeago_plus_flutter.svg?label=timeago_plus_flutter&color=blue)](https://pub.dev/packages/timeago_plus_flutter) | Flutter widgets   |
 
-The easiest way to use this library via top-level function `format(date)`:
+---
+
+## Usage
+
+The easiest way to use this library is the top-level `format(date)` function:
 
 ```dart
-import 'package:timeago/timeago.dart' as timeago;
+import 'package:timeago_plus/timeago_plus.dart' as timeago;
 
-main() {
-    final fifteenAgo = DateTime.now().subtract(Duration(minutes: 15));
+void main() {
+  final fifteenAgo = DateTime.now().subtract(Duration(minutes: 15));
 
-    print(timeago.format(fifteenAgo)); // 15 minutes ago
-    print(timeago.format(fifteenAgo, locale: 'en_short')); // 15m
-    print(timeago.format(fifteenAgo, locale: 'es')); // hace 15 minutos
+  print(timeago.format(fifteenAgo)); // 15 minutes ago
+  print(timeago.format(fifteenAgo, locale: 'en_short')); // 15m
+  print(timeago.format(fifteenAgo, locale: 'es')); // hace 15 minutos
 }
 ```
 
-##### IMPORTANT
+## Important Notes
 
-timeago library **ONLY** includes `en` and `es` messages loaded by default.
+timeago_plus includes only en and es by default.
 
-To add more of the supported languages use `timeago.setLocaleMessages(..)`. See [locale messages](packages/timeago/lib/src/messages).
-
-##### Standard for language code
-
-This library uses ISO 639-1 language code to identify the language. For more information see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
-
-### Adding locales
+To add more supported languages, call:
 
 ```dart
-timeago.setLocaleMessages('fr', timeago.FrMessages()); // Add french messages
-
-print(timeago.format(fifteenAgo, locale: 'es')); // environ 15 minutes
+timeago.setLocaleMessages('fr', timeago.FrMessages());
 ```
 
-### Overriding locales or adding custom messages
+## Language Codes
 
+This library uses ISO 639-1 language codes.
+See: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+
+## Custom / Overridden Locales
 ```dart
-// Override "en" locale messages with custom messages that are more precise and short
+// Override "en" locale messages with custom messages
 timeago.setLocaleMessages('en', MyCustomMessages());
-
 
 // my_custom_messages.dart
 class MyCustomMessages implements LookupMessages {
@@ -63,42 +72,74 @@ class MyCustomMessages implements LookupMessages {
   @override String days(int days) => '${days}d';
   @override String aboutAMonth(int days) => '${days}d';
   @override String months(int months) => '${months}mo';
-  @override String aboutAYear(int year) => '${year}y';
+  @override String aboutAYear(int years) => '${years}y';
   @override String years(int years) => '${years}y';
   @override String wordSeparator() => ' ';
 }
-
 ```
 
-## Scope
+## Scope / Philosophy
 
-While there are many request for adding more complex functionality I want keep this library as simple as possible to allow minimal maintenance.
+```timeago_plus``` aims to remain lightweight and dependency-free.
+The goals of this fork remain:
 
-The focus of this library should be
+1. Provide a simple ```format()``` function to convert ```dates``` into human text
+2. Allow users to define custom locales
+3. Support community-contributed locales without bloating the core
+4. Keep the package dependency-free and easy to maintain
 
-1. Provide a single `format` function that transforms a `date` to a humanized value
-2. Give the abstractions for users to add their own languages or overriding them as they please
-3. Provide languages contributed by the community so users can add them _as they need_ we should not add all languages by default.
-4. Library should not depend on any dependency
+## timeago_plus_flutter Widgets
 
-# timeago_flutter widgets
+  - Timeago
 
-- Timeago
-- TimerRefresh
-- TimerRefreshWidget
+  - TimerRefresh
 
-# Local development
+  - TimerRefreshWidget
 
-1. Install Melos (https://pub.dev/packages/melos):
+## Local Development
 
-`dart pub global activate melos`
+  1. Install Melos:
+  ```dart
+   dart pub global activate melos
+  ```
 
-2. Bootstrap dependencies:
+  2. Bootstrap dependencies:
+  ```dart
+    melos bootstrap
+  ```
 
-`melos bootstrap`
+   3. Open the desired package in your editor (VSCode, IntelliJ, etc.)
 
-3. Open desired package in VSCode or Webstorm
+## Migration from timeago to timeago_plus
 
-# Live Demo
+Most APIs remain the same.
+To switch:
+Before
+```
+import 'package:timeago/timeago.dart';
+```
+After
+```
+import 'package:timeago_plus/timeago_plus.dart';
+```
+Locale messages and Flutter widget usage remain compatible.
 
-[Here](https://andresaraujo.github.io/timeago.dart/)
+## Differences from the original timeago
+
+  1. Actively maintained
+  2. Updated for modern Dart / Flutter versions
+  3. Bug fixes and PR improvements merged from community requests
+  4. Cleaner code organization
+  5. Published as a separate, community-maintained package (timeago_plus)
+
+## License
+
+This project retains the original MIT license and attribution.
+
+```
+Copyright (c) 2015 Andres Araujo
+```
+Additional modifications 
+``` 
+© 2025 Elvis Ngatia
+```
