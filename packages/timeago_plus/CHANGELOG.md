@@ -7,12 +7,13 @@
 
 All notable changes to **timeago_plus** will be documented in this file.
 
-## [1.2.0] - 2025-12-06
+## [1.3.1] - 2026-03-09
+### Fixed
+- Improved Tamil locale support (`ta_messages.dart`)
+
+## [1.3.0] - 2025-12-06
 ### Added
 - Added Swahili locale support (`sw_messages.dart`)
-
-## [1.1.0] - 2025-12-06
-### Added
 - Added Somali locale support (`so_messages.dart`)
 
 ## [1.0.0] - 2025-12-06
