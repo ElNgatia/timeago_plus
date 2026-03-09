@@ -1,3 +1,7 @@
+## 1.1.0
+
+ - **FEAT**: add somali support.
+
 # Changelog
 
 All notable changes to **timeago_plus** will be documented in this file.
