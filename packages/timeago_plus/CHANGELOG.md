@@ -1,11 +1,10 @@
-## 1.3.0
-
- - **FEAT**: add swahili support.
- - **FEAT**: add somali support.
-
 # Changelog
 
 All notable changes to **timeago_plus** will be documented in this file.
+
+## [1.4.0] - 2026-03-17
+### Added
+- Added Lingala locale support (`ln_messages.dart`)
 
 ## [1.3.1] - 2026-03-09
 ### Fixed

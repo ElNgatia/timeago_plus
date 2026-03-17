@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2026-03-17
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`timeago_plus` - `v1.4.0`](#timeago_plus---v140)
+
+---
+
+#### `timeago_plus` - `v1.4.0`
+
+ - **FEAT**: add Lingala locale support.
+
 ## 2026-03-09
 
 ### Changes
