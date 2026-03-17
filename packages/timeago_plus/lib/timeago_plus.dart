@@ -26,6 +26,7 @@ export 'package:timeago_plus/src/messages/ja_messages.dart';
 export 'package:timeago_plus/src/messages/km_messages.dart';
 export 'package:timeago_plus/src/messages/ko_messages.dart';
 export 'package:timeago_plus/src/messages/ku_messages.dart';
+export 'package:timeago_plus/src/messages/ln_messages.dart';
 export 'package:timeago_plus/src/messages/lookupmessages.dart';
 export 'package:timeago_plus/src/messages/lv_messages.dart';
 export 'package:timeago_plus/src/messages/mn_messages.dart';
